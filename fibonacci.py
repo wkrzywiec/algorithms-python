@@ -1,16 +1,35 @@
 import unittest
 
 def fib(n):
+    """Returns a Fibonacii element by its index
+    
+    Arguments:
+        n {integer} -- An index number
+    
+    Returns:
+        integer -- A Fibonacci number at given index
+    """
+    
     if n > 1:
         return fib(n-1) + fib(n-2)
     else:
         return n
 
 def fib_seq(n):
+    """Returns a Fibonacci sequence
+    
+    Arguments:
+        n {integer} -- Number of elements to be returned
+    
+    Returns:
+        string -- The Fibonacci sequence
+    """
+
     list = []
     for i in range(n):
         list.append(str(fib(i)))
     return ' '.join(list)
+
 
 ## TEST cases of the Fibonacci sequence
 class TestFibonacci(unittest.TestCase):
