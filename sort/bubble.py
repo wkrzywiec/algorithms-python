@@ -1,11 +1,19 @@
 import unittest
 
 def bubble_sort(list):
-    length = len(list) - 1 
+    """Sort list using Bubble Sort algorithm
+    
+    Arguments:
+        list {integer} -- Unsorted list
+    
+    Returns:
+        list {integer} -- Sorted list
+    """
+
     swap = True
     while swap:
         swap = False
-        for n in range(length):
+        for n in range(len(list) - 1 ):
             if list[n] > list[n+1]:
                 current = list[n]
                 list[n] = list[n + 1]
