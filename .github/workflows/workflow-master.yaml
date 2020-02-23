@@ -1,5 +1,8 @@
-name: Python Workflow
-on: [push]
+name: Python Master Workflow
+on:
+  push:
+    branches:
+      - 'master'
 jobs:
   codecov:
     name: Codecov Workflow
