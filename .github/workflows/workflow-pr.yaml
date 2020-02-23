@@ -16,7 +16,7 @@ jobs:
           pip install pytest
           pytest
       - name: Wemake Python Stylguide
-        uses: wemake-services/wemake-python-styleguide
+        uses: wemake-services/wemake-python-styleguide@latest
         with:
           reporter: 'github-pr-review'
         env:
