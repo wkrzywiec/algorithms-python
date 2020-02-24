@@ -25,5 +25,6 @@ class TestAnagram(unittest.TestCase):
         self.assertFalse(is_anagram('ython', 'python'), 'Missing one letter')
         self.assertFalse(is_anagram('book', 'bok'), 'Same letters, but different count')
 
+
 if __name__ == '__main__':
     unittest.main()
