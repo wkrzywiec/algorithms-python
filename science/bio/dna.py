@@ -40,6 +40,22 @@ def dna_location(dna, sub):
             check = False
     return dna_locations
 
+def hamming_distance(first, second):
+    """Calculate Hamming Distance, number of mismatched nucleotides in two DNA sequences
+    
+    Arguments:
+        first {String} -- First DNA sequence
+        second {String} -- Seconde DNA sequence
+    
+    Returns:
+        integer -- Number of mismatches
+    """
+    sum = 0
+    for i in range(len(first)):
+        if first[i] != second[i]:
+            sum += 1
+    return sum
+
 class TestDna(unittest.TestCase):
     
     def test_complementary_dna(self):
@@ -51,6 +67,13 @@ class TestDna(unittest.TestCase):
         self.assertEqual(dna_location('AUGCUUCAGAAAGGUCUUACG', 'UGCU'), [2])
         self.assertEqual(dna_location('GATATATGCATATACTT', 'ATAT'), [2, 10])
         self.assertEqual(dna_location('AGCTTTTCATTCTGAGTGCAACGGGCAATAAGAGTGTCTGATGAGTATC', 'GAGT'), [14, 32, 43])
+
+    def test_hamming_distance(self):
+        self.assertEqual(hamming_distance('GAGCCTACTAACGGGAT', 'CATCGTAATGACGGCCT'), 7)
+        self.assertEqual(
+            hamming_distance(
+                'TGACCCGTTATGCTCGAGTTCGGTCAGAGCGTCATTGCGAGTAGTCGTTTGCTTTCTCAAACTCC',
+                'GAGCGATTAAGCGTGACAGCCCCAGGGAACCCACAAAACGTGATCGCAGTCCATCCGATCATACA'), 50)
 
 
 if __name__ == '__main__':
