@@ -1,7 +1,7 @@
 import unittest
 
 class Stack:
-    """Simple Stack implementation - First In First Out
+    """Simple Stack implementation - First In Last Out
     """
 
     def __init__(self):
