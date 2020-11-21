@@ -11,10 +11,7 @@ def reverse(text):
     """
     if text is None:
        return None 
-    result = []
-    for char in text:
-        result.insert(0, char)
-    return ''.join(result)
+    return ''.join(reversed(text))
 
 
 class ReverseString(unittest.TestCase):
